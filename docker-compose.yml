@@ -1,0 +1,23 @@
+version: '3.1'
+
+#indica os serviços que serão executados
+services:
+  backend:
+  #cria uma imagem para o backend a partir do dockerfile na pasta ./backend/
+    build:
+      context: ./backend/
+    restart: always
+    #expõem a porta 80 do container do backend na porta 4000 do localhost
+    ports:
+      - 4000:80
+    container_name: backend-prova
+
+  #exatamente a mesma logica do backend
+  frontend:
+    build:
+      context: ./frontend/
+    restart: always
+    ports:
+      - 3000:3000
+    container_name: frontend-prova
+

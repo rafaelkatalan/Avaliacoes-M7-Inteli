@@ -1,0 +1,20 @@
+# Imagem base Node para poder executar o app express
+FROM node:14
+
+# Diretório dentro da imagem que vamos trabalhar
+WORKDIR /app
+
+#copia o arquivo package.json para dentro do diretorio dentro da imagem
+COPY package.json /app
+
+#instala os requerimentos para o app
+RUN npm install
+
+#copia os arquivos para o diretorio dentro da imagem
+COPY . /app
+
+#expõem a porta 3000
+EXPOSE 3000
+
+#comando de inicialização do app
+CMD ["node", "server.js"]

@@ -1,4 +1,4 @@
-SERVIDOR = 'http://localhost:8000';
+SERVIDOR = 'http://localhost:4000';
 
 async function criarUsuario() {
     const nome = document.getElementById('nome').value;
